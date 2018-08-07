@@ -16,7 +16,7 @@ def conv_block(input, growth_rate, dropout_rate=None, weight_decay=1e-4):
     if(dropout_rate):
         x = Dropout(dropout_rate)(x)
     return x
-
+# nb_layers is the number of a dense block,grow_rate is the number of output filter maps
 def dense_block(x, nb_layers, nb_filter, growth_rate, droput_rate=0.2, weight_decay=1e-4):
     for i in range(nb_layers):
         cb = conv_block(x, growth_rate, droput_rate, weight_decay)
